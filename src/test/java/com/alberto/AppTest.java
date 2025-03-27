@@ -19,7 +19,7 @@ class AppTest {
 
     @Test
     void testCrearListaDias(){
-        gestor.testCrearListaDias()
+        gestor.crearListaDias()
         List<String> dias = gestor.obtenerDiasSemana();
         assertEquals(7, dias.size());
         assertTrue(dias.contains("Lunes"));
