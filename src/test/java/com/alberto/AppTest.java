@@ -3,16 +3,26 @@ package com.alberto;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-/**
- * Unit test for simple App.
- */
+import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
+
 class AppTest {
-    /**
-     * Rigorous Test.
-     */
-    @Test
-    void testApp() {
-        assertEquals(1, 1);
+    private GestorDiasSemanas gestor;
+
+    @BeforeEach
+    void setUp() {
+        gestor = new GestorDiasSemana();
     }
+
+    @Test
+    void testCrearListaDias(){
+        gestor.testCrearListaDias()
+        List<String> dias = gestor.obtenerDiasSemana();
+        assertEquals(7, dias.size());
+        assertTrue(dias.contains("Lunes"));
+    }
+
 }
